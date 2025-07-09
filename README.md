@@ -1,39 +1,116 @@
-# ici_template [This section can be removed in the submission version]
-This GitHub repository offers a template specifically designed to teach students how to write effective README.md files and create a well-organized file structure. The template provides clear instructions and examples, helping students to learn the basics of GitHub and how to create professional-looking repositories.
-
-
-# Project Title
-
-[Enter the title of your project]
+# Philosophical AI Debate: Aristotle vs. Nietzsche
+Philosophical AI Debate: Aristotle vs. Nietzsche
+The goal of this project is to improve how philosophy is studied by moving away from rote memorization toward AI-powered dialogue simulations.
+We use classical philosophical texts (e.g., Aristotle’s Physics) to build a searchable vector database.
+When users input a philosophical question, such as "What is justice?" or "What is love?", the system retrieves relevant text segments and simulates how each philosopher might respond, preserving their unique reasoning styles.
 
 ## Project Description
 
-[Enter a brief description of your project, including the data you used and the analytical methods you applied. Be sure to provide context for your project and explain why it is important.]
+This project was created as the final assignment for the Introduction to Artificial Intelligence course at National Chengchi University in 2025.
+
+In everyday life, we constantly face decisions, ranging from small ones like "What should I eat for dinner?", to life-changing ones like "Which college should I go to?" People often find themselves torn between options, lacking a clear, well-reasoned perspective.
+
+That’s where our idea came from: what if we could simulate a debate between two “experts” from opposing philosophical perspectives to help users explore the pros and cons of their decisions?
+
+Our goal was to build an AI tool that simulates an intellectual debate between two philosophers with opposing perspectives to help users explore complex decisions through philosophical reasoning. We constructed two LangChain-powered AI agents, each connected to its own custom database built from classical texts, to represent the ideas and language styles of each philosopher.
+
+This project integrates:
+ * PDF preprocessing of classical texts
+ * OpenAI embeddings
+ * MongoDB Atlas vector search
+ * LangChain framework for retrieval
+ * Gradio for interactive UI
 
 ## Getting Started
 
-[Provide instructions on how to get started with your project, including any necessary software or data. Include installation instructions and any prerequisites or dependencies that are required.]
+To run this project locally or build upon it, you’ll need the following:
+
+Prerequisites: 
+* Python 3.9+
+* pip
+* MongoDB (local or cloud-based)
+* LangChain
+* OpenAI API Key (or any other LLM provider compatible with LangChain)
+
+Install required Python packages:
+* Set up your .env file with your API keys and MongoDB connection string:
+   * OPENAI_API_KEY=your-api-key
+   * MONGO_URI=your-mongo-uri
+
+Run the main script to initiate a philosophical debate:
+* Philosophy_Debater.py
 
 ## File Structure
 
-[Describe the file structure of your project, including how the files are organized and what each file contains. Be sure to explain the purpose of each file and how they are related to one another.]
+Intro_to_AI_FinalPJ 
+* Data
+  * Aristotle(Contains selected works of Aristotle)
+    * PhysicsI.txt
+    * PhysicsII.txt
+    * PhysicsIII.txt
+    * Nicomachean_EthicsI.txt
+    * Nicomachean_EthicsX.txt
+    * MetaphysicsI.txt
+    * MetaphysicsXII.txt
+    * On_the_SoulII.txt
+    * On_the_SoulIII.txt
+  * Nietzsche(Contains selected works of Nietzsche)
+    * Beyond_Good_and_Evil.txt
+    * Human_All_Too_Human.txt
+    * The_Joyful_Wisdom.txt
+* Philosophy_Debater
+* README
+
 
 ## Analysis
 
-[Describe your analysis methods and include any visualizations or graphics that you used to present your findings. Explain the insights that you gained from your analysis and how they relate to your research question or problem statement.]
+Our approach involved retrieval-augmented generation (RAG) using LangChain. Here's how we conducted our analysis:
+
+ * Text Processing: Used LangChain PDF loaders and recursive character splitters to divide texts into segments.
+ * Embedding: Applied OpenAI’s embedding model to convert segments into vector format.
+ * Storage & Retrieval: Stored vectors in MongoDB Atlas using the AtlasVectorSearch module for similarity-based search.
+ * AI Simulation: Retrieved relevant text segments and prompted OpenAI’s LLM to generate philosopher-style responses.
 
 ## Results
 
-[Provide a summary of your findings and conclusions, including any recommendations or implications for future research. Be sure to explain how your results address your research question or problem statement.]
+Our system successfully simulates dialogue between philosophers based on their texts.
+For instance, on the question “What is love?”, Aristotle emphasizes virtue and growth, while Nietzsche focuses on power and emotion.
+This comparative approach reveals how different traditions respond to the same core ideas.
+
+Limitations:
+ * The dataset size was limited; broader coverage could improve depth.
+ * Prompts sometimes led to repetitive or awkward language.
+ * AI responses could benefit from more naturalistic dialogue formatting.
+
+## Future Improvements
+After finishing the prototype, we think it's a success regarding how it could provoke thinking and would deeply mimic the philosopher's thinking and wordings. However, for future improvements, it would definitely be more helpful with more dataset regarding our datasize was relatively small. On the other hand, it would also worth doing research on how to set the prompt to let the two debater talks more naturally, avoiding repeated wordings and awkward communication style. We hope it could be like two friends chatting and debating normally in daily life, which would also be easier for users to understand. 
+
+In the future, we hope this tool can grow into a helpful assistant that presents different viewpoints and helps users understand what different people care about. By building custom databases for specific topics or viewpoints, it could become much more focused and useful than general-purpose AI. Instead of giving broad or vague answers, it could offer deeper, more relevant insights based on expert knowledge or specific perspectives. The debate mode can encourage users to see issues from multiple sides, sparking new ideas and helping them think more critically about their choices. This interactive format makes exploring complex topics more engaging and thought-provoking. 
 
 ## Contributors
 
-[List the contributors to your project and describe their roles and responsibilities.]
+Ivy (盧家愛, 113zu1055)   
+Yoyo (陳玟佑, 113zu1017)   
+Melisa (陳雨柔, 112zu1048)   
+Yvonne (曾秭翊, 112zu1017)   
 
 ## Acknowledgments
 
-[Thank any individuals or organizations who provided support or assistance during your project, including funding sources or data providers.]
+We’d like to thank:
+
+Prof. Pien, for their guidance throughout the course  
+Our Teaching Assistance Harry for helping us troubleshoot technical issues and offering valuable feedback throughout the project  
+The LangChain community, for making RAG pipelines accessible  
+The Internet Classics Archive (MIT), for providing open-access philosophical texts  
+Reddit Philosophy Community, for recommendations on core philosophical texts  
+We also appreciate the open-source tools provided by LangChain, OpenAI, MongoDB Atlas, and Gradio.
 
 ## References
 
-[List any references or resources that you used during your project, including data sources, analytical methods, and tools.]
+The Internet Classics Archive. https://classics.mit.edu/index.html   
+LangChain Documentation. https://docs.langchain.com/   
+Nietzsche, F. (Beyond Good and Evil, Human, All Too Human, and the Joyful Wisdom)   
+Aristotle (PhysicsI ~ III, Nicomachean Ethics I & X, Metaphysics I & XII, On the Soul II & III. )   
+MongoDB Documentation. https://www.mongodb.com/docs/   
+OpenAI GPT API. https://platform.openai.com/  
+Gradio Interface https://www.gradio.app/
