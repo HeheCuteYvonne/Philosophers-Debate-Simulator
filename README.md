@@ -32,7 +32,7 @@ Prerequisites:
 * OpenAI API Key (or any other LLM provider compatible with LangChain)
 
 Install required Python packages:
-* Set up your .env file with your API keys and MongoDB connection string:
+* Set up your '.env' file with your API keys and MongoDB connection string:
    * OPENAI_API_KEY=your-api-key
    * MONGO_URI=your-mongo-uri
 
