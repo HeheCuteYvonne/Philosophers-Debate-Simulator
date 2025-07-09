@@ -1,5 +1,4 @@
-# Philosophical AI Debate: Aristotle vs. Nietzsche
-Philosophical AI Debate: Aristotle vs. Nietzsche
+# Philosophers-Debate-Simulator
 The goal of this project is to improve how philosophy is studied by moving away from rote memorization toward AI-powered dialogue simulations.
 We use classical philosophical texts (e.g., Aristotle’s Physics) to build a searchable vector database.
 When users input a philosophical question, such as "What is justice?" or "What is love?", the system retrieves relevant text segments and simulates how each philosopher might respond, preserving their unique reasoning styles.
