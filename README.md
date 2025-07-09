@@ -24,42 +24,62 @@ This project integrates:
 
 To run this project locally or build upon it, you’ll need the following:
 
-Prerequisites: 
+### Prerequisites: 
 * Python 3.9+
 * pip
 * MongoDB (local or cloud-based)
 * LangChain
 * OpenAI API Key (or any other LLM provider compatible with LangChain)
 
-Install required Python packages:
-* Set up your .env file with your API keys and MongoDB connection string:
-   * OPENAI_API_KEY=your-api-key
-   * MONGO_URI=your-mongo-uri
+### Installation
+```bash
+pip install -r requirements.txt
+```
 
-Run the main script to initiate a philosophical debate:
-* Philosophy_Debater.py
+Or install key dependencies manually:
+```bash
+pip install openai pymongo langchain gradio python-dotenv
+```
+
+### Setup
+Create a `.env` file in your root directory and add:
+```
+OPENAI_API_KEY=your-api-key
+MONGO_URI=your-mongo-uri
+```
+
+### Run the Project
+Run the main script:
+
+```bash
+python Philosophy_Debater.py
+```
+
+Or open the notebook `Langchain_Mongo_Philosophy.ipynb` to run it step-by-step.
 
 ## File Structure
 
-Intro_to_AI_FinalPJ 
-* Data
-  * Aristotle(Contains selected works of Aristotle)
-    * PhysicsI.txt
-    * PhysicsII.txt
-    * PhysicsIII.txt
-    * Nicomachean_EthicsI.txt
-    * Nicomachean_EthicsX.txt
-    * MetaphysicsI.txt
-    * MetaphysicsXII.txt
-    * On_the_SoulII.txt
-    * On_the_SoulIII.txt
-  * Nietzsche(Contains selected works of Nietzsche)
-    * Beyond_Good_and_Evil.txt
-    * Human_All_Too_Human.txt
-    * The_Joyful_Wisdom.txt
-* Philosophy_Debater
-* README
-
+```
+Intro_to_AI_FinalPJ/
+├── Data/
+│   ├── Aristotle/
+│   │   ├── PhysicsI.txt
+│   │   ├── PhysicsII.txt
+│   │   ├── PhysicsIII.txt
+│   │   ├── Nicomachean_EthicsI.txt
+│   │   ├── Nicomachean_EthicsX.txt
+│   │   ├── MetaphysicsI.txt
+│   │   ├── MetaphysicsXII.txt
+│   │   ├── On_the_SoulII.txt
+│   │   ├── On_the_SoulIII.txt
+│   └── Nietzsche/
+│       ├── Beyond_Good_and_Evil.txt
+│       ├── Human_All_Too_Human.txt
+│       └── The_Joyful_Wisdom.txt
+├── Philosophy_Debater.py
+├── Langchain_Mongo_Philosophy.ipynb
+└── README.md
+```
 
 ## Analysis
 
